@@ -1,16 +1,16 @@
 function multiplicarMatriz() {
     // Obter os valores dos inputs 
-    const rows = parseInt(document.getElementById("rows-input").value);
-    const cols = parseInt(document.getElementById("cols-input").value);
-    const number = Number(document.getElementById("number-input").value);
+    const linhas = parseInt(document.getElementById("linhas").value);
+    const colunas = parseInt(document.getElementById("colunas").value);
+    const numeroMultiplicar = Number(document.getElementById("inputNumero").value);
   
     // Inicializar a matriz vazia
     const matriz = [];
   
     // Preencher a matriz com os elementos informados pelo usuário
-    for (let i = 0; i < rows; i++) {
+    for (let i = 0; i < linhas; i++) {
       const linha = [];
-      for (let j = 0; j < cols; j++) {
+      for (let j = 0; j < colunas; j++) {
         const elemento = Number(prompt("Digite o elemento [" + i + "][" + j + "]:"));
         linha.push(elemento);
       }
@@ -18,7 +18,7 @@ function multiplicarMatriz() {
     }
   
     // Obter a referência para a div de entrada e limpar o conteúdo anterior
-    const entrada = document.getElementById("original-matrix");
+    const entrada = document.getElementById("originalMatrix");
     entrada.innerHTML = "";
   
     // Obter a referência para a div de saída e limpar o conteúdo anterior
@@ -29,18 +29,18 @@ function multiplicarMatriz() {
     for (let i = 0; i < matriz.length; i++) {
       const linhaInicial = matriz[i];
       const divLinhaInicial = document.createElement("div");
-      divLinhaInicial.textContent = `[${linhaInicial.join(" ")}]`;
+      divLinhaInicial.textContent = `${linhaInicial.join(" ")}`;
       entrada.appendChild(divLinhaInicial);
     }
   
     // Multiplicar a matriz pelo número informado
-    const resultado = multiplicarMatrizPorNumero(matriz, number);
+    const resultado = multiplicarMatrizPorNumero(matriz, numeroMultiplicar);
   
     // Percorrer as linhas da matriz resultante e exibir cada linha em uma div separada
     for (let i = 0; i < resultado.length; i++) {
       const linha = resultado[i];
       const divLinha = document.createElement("div");
-      divLinha.textContent = `[${linha.join(" ")}]`;
+      divLinha.textContent = `${linha.join(" ")}`;
       saida.appendChild(divLinha);
     }
   }
@@ -66,15 +66,5 @@ function multiplicarMatriz() {
   
     // Retornar a matriz resultante
     return resultado;
-  }
-  
-  function handleKeyPress(event, nextInput) {
-    // Verificar se a tecla pressionada é a tecla Enter
-    if (event.keyCode === 13) {
-      event.preventDefault();
-  
-      // Mover o foco para o próximo input
-      nextInput.focus();
-    }
   }
   

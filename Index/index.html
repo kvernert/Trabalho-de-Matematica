@@ -7,27 +7,27 @@
 <body>
     <h1>Multiplicar Matriz por Número</h1>
 
-    <div id="input-section">
-        <div class="input-container">
-        <label for="rows-input">Linhas:</label>
-        <input type="number" id="rows-input" onkeypress="handleKeyPress(event, document.getElementById('cols-input'))">
+    <div id="inputs">
+        <div class="inputContainer">
+        <label for="linhas">Linhas:</label>
+        <input type="number" id="linhas">
         
-        <label for="cols-input">Colunas:</label>
-        <input type="number" id="cols-input" onkeypress="handleKeyPress(event, document.getElementById('number-input'))">
+        <label for="colunas">Colunas:</label>
+        <input type="number" id="colunas">
         
-        <label for="number-input">Número:</label>
-        <input type="number" id="number-input">
+        <label for="inputNumero">Número:</label>
+        <input type="number" id="inputNumero">
     </div>
         <button onclick="multiplicarMatriz()">Multiplicar</button>
     </div>
-    <div id="matrix-section">
-        <div class="matrix-container">
+    <div id="matrixSection">
+        <div class="container">
           <h2>Matriz Original:</h2>
-          <div id="original-matrix" class="fade-in"></div>
+          <div id="originalMatrix" class="aparece"></div>
         </div>
-        <div class="matrix-container">
+        <div class="container">
           <h2>Resultado:</h2>
-          <div id="result" class="fade-in"></div>
+          <div id="result" class="aparece"></div>
         </div>
       </div>
     <script src="../Index/java/javascript.js"></script>
